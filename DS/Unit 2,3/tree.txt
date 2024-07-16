@@ -1,0 +1,10 @@
+
+template <class T>
+int BinaryTree<T>::Height(BinaryTreeNode<T> *t) const
+{// Return height of tree *t.
+   if (!t) return 0;               // empty tree
+   int hl = Height(t->LeftChild);  // height of left
+   int hr = Height(t->RightChild); // height of right
+   if (hl > hr) return ++hl;
+   else return ++hr;
+}
